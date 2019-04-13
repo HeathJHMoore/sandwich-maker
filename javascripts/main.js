@@ -1,1 +1,5 @@
-console.log("yo yo")
+const init = () => {
+
+}
+
+init()
