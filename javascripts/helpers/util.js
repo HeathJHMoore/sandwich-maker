@@ -1,4 +1,8 @@
-import bread from '../components/bread.js'
+import breads from '../components/bread.js'
+import meats from '../components/meat.js'
+import cheeses from '../components/cheese.js'
+import condiments from '../components/condiments.js'
+import veggies from '../components/veggies.js';
 
 let cart = [];
 
@@ -33,15 +37,25 @@ const cartStringBuilder = (array) => {
     printToDom('cart-container', domString);
 }
 
-const addBread = (event) => {
+const addingredient = (event) => {
     if (event.target.checked) {
         const newIngredient = {};
         newIngredient.ingredientType = event.target.id;
-        newIngredient.ingredientPrice = bread.breads[event.target.id];
+        if (event.target.name === 'breads') {
+            newIngredient.ingredientPrice = breads.breads[event.target.id];
+        } else if (event.target.name === 'meats') {
+            newIngredient.ingredientPrice = meats.meats[event.target.id];
+        } else if (event.target.name === 'cheeses') {
+            newIngredient.ingredientPrice = cheeses.cheeses[event.target.id];
+        } else if (event.target.name === 'condiments') {
+            newIngredient.ingredientPrice = condiments.condiments[event.target.id];
+        } else if (event.target.name === 'veggies') {
+            newIngredient.ingredientPrice = veggies.veggies[event.target.id];
+        }
         addToCart(newIngredient);
     } else {
         removeFromCart(event.target.id);
     };
 };
 
-export default { addBread };
+export default { addingredient };
