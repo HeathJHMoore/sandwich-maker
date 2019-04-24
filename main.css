@@ -4,4 +4,9 @@ body {
 
 .ingredient-row {
     margin-bottom: 20px;
+    /* border: solid 1px black; */
+}
+
+#cart-container {
+    padding-left: 30px;
 }

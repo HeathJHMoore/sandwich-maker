@@ -6,6 +6,20 @@ import veggies from '../components/veggies.js';
 
 let cart = [];
 
+
+const totalBuilder = () => {
+    let totalPrices = [];
+    cart.forEach((member) => {
+        totalPrices.push(member.ingredientPrice);
+    })
+    let total = 0;
+    console.error(totalPrices);
+    totalPrices.forEach((price) => {
+        total = total + price;
+    });
+    return total;
+};
+
 const addToCart = (newIngredient) => {
     cart.push(newIngredient);
     cartStringBuilder(cart);
@@ -34,8 +48,10 @@ const cartStringBuilder = (array) => {
         domString += `${item.ingredientType} ${item.ingredientPrice}`;
         domString += `</div>`
     })
+    domString += `<div class="row" style="background-color: black; color: white;">Total: ${totalBuilder()}</div>`
     printToDom('cart-container', domString);
 }
+
 
 const addingredient = (event) => {
     if (event.target.checked) {
@@ -57,5 +73,9 @@ const addingredient = (event) => {
         removeFromCart(event.target.id);
     };
 };
+
+
+
+
 
 export default { addingredient };
