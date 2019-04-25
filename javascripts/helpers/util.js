@@ -43,12 +43,13 @@ const printToDom = (divId, textToPrint) => {
 
 const cartStringBuilder = (array) => {
     let domString = ``
+    domString += '<h2 class="row d-flex justify-content-center" style="background-color: black; color: white;">Your Order</h2>'
     array.forEach((item) => {
-        domString += `<div class="row">`
+        domString += `<div class="row d-flex justify-content-center cart-ingredients">`
         domString += `${item.ingredientType} ${item.ingredientPrice}`;
         domString += `</div>`
     })
-    domString += `<div class="row" style="background-color: black; color: white;">Total: ${totalBuilder()}</div>`
+    domString += `<div class="row d-flex justify-content-center" style="background-color: black; color: white;">Total: $${totalBuilder()}</div>`
     printToDom('cart-container', domString);
 }
 

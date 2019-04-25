@@ -1,12 +1,23 @@
 body {
-    background-color: silver;
+    background-color: white;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .ingredient-row {
     margin-bottom: 20px;
+    background-color: #0074D9;
     /* border: solid 1px black; */
+    color: whitesmoke;
+}
+
+.ingredient-row:last-child {
+    margin-bottom: 0px;
 }
 
 #cart-container {
-    padding-left: 30px;
+    color: black;
+}
+
+.cart-ingredients {
+    background-color: white;
 }
