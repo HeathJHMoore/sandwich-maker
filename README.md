@@ -1,4 +1,5 @@
 # sandwich-maker
+Hungry for a sandwich? Order one here with ease!
 
 # Screenshot
 ![alt text](https://github.com/HeathJHMoore/sandwich-maker/blob/master/Screen%20Shot%202019-06-15%20at%209.41.06%20AM.png)
